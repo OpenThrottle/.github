@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" fill="none" role="img">
+<style>
+  .sans { font-family: Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
+  .mono { font-family: 'JetBrains Mono', SFMono-Regular, Menlo, Consolas, monospace; }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .streak { animation: zip 2.2s cubic-bezier(.22,1,.36,1) both; }
+    .s1 { animation-delay: .15s; } .s2 { animation-delay: .3s; }
+    .s3 { animation-delay: .45s; } .s4 { animation-delay: .6s; }
+  }
+  @keyframes zip {
+    0% { transform: translateX(-140px); opacity: 0; }
+    100% { transform: translateX(0); }
+  }
+</style>
+<defs>
+  <clipPath id="round"><rect width="1280" height="360" rx="16"/></clipPath>
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+    <path d="M32 0H0V32" stroke="#161B20" stroke-width="1"/>
+  </pattern>
+</defs>
+<g clip-path="url(#round)">
+  <rect width="1280" height="360" fill="#0A0D0F"/>
+  
+  <defs>
+    <radialGradient id="glow" cx="220" cy="180" r="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF0000" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#FF0000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="streak" x1="0" x2="1">
+      <stop offset="0" stop-color="#FF0000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#FF0000"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="1"/>
+      <stop offset=".75" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="gridmask"><rect width="1280" height="360" fill="url(#fade)"/></mask>
+  </defs>
+  <rect width="1280" height="360" fill="url(#grid)" mask="url(#gridmask)"/>
+  <rect width="1280" height="360" fill="url(#glow)"/>
+  <rect class="streak s0" x="920" y="44" width="300" height="3" rx="1.5" fill="url(#streak)" opacity="0.9"/>
+  <rect class="streak s1" x="1010" y="62" width="210" height="3" rx="1.5" fill="url(#streak)" opacity="0.5"/>
+  <rect class="streak s2" x="960" y="80" width="260" height="3" rx="1.5" fill="url(#streak)" opacity="0.75"/>
+  <rect class="streak s3" x="1050" y="98" width="170" height="3" rx="1.5" fill="url(#streak)" opacity="0.4"/>
+
+  <image href="data:image/png;base64,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" x="92" y="52" width="256" height="256"/>
+
+  <text class="mono" x="380" y="112" font-size="17" letter-spacing="3" fill="#FF0000">OPEN CORE · MCP-NATIVE · LOCAL-FIRST</text>
+  <text class="sans" x="376" y="186" font-size="78" font-weight="800" letter-spacing="-2.5" fill="#F7F9FA">OpenThrottle<tspan fill="#FF0000"> AI</tspan></text>
+  <text class="sans" x="380" y="236" font-size="25" fill="#7C8892">AI-powered feedback loops that move you 10× to 100× faster,</text>
+  <text class="sans" x="380" y="270" font-size="25" fill="#7C8892">without giving up control.</text>
+  <text class="mono" x="380" y="320" font-size="19" fill="#F7F9FA">plan <tspan fill="#FF0000">→</tspan> run <tspan fill="#FF0000">→</tspan> validate <tspan fill="#FF0000">→</tspan> ship <tspan fill="#FF0000">→</tspan> remember <tspan fill="#FF0000">↺</tspan></text>
+  <rect x="0" y="356" width="1280" height="4" fill="#FF0000" opacity=".9"/>
+</g>
+<rect x="0.5" y="0.5" width="1279" height="359" rx="15.5" stroke="#20262D"/>
+</svg>

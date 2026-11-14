@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="470" viewBox="0 0 1280 470" fill="none" role="img">
+<style>
+  .sans { font-family: Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
+  .mono { font-family: 'JetBrains Mono', SFMono-Regular, Menlo, Consolas, monospace; }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .flow { stroke-dasharray: 6 8; animation: dash 1.4s linear infinite; }
+  }
+  @keyframes dash { to { stroke-dashoffset: -28; } }
+</style>
+<defs>
+  <clipPath id="round"><rect width="1280" height="470" rx="16"/></clipPath>
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+    <path d="M32 0H0V32" stroke="#EEF1F4" stroke-width="1"/>
+  </pattern>
+</defs>
+<g clip-path="url(#round)">
+  <rect width="1280" height="470" fill="#FFFFFF"/>
+  
+  <rect width="1280" height="470" fill="url(#grid)" opacity=".6"/>
+  <text class="mono" x="40" y="58" font-size="17" letter-spacing="3" fill="#E00000">THE LOOP</text>
+  <text class="sans" x="40" y="106" font-size="42" font-weight="800" letter-spacing="-1" fill="#0A0D0F">From idea to merged PR, and back again</text>
+  <g>
+    <rect x="40" y="140" width="216" height="184" rx="12" fill="#F6F8FA" stroke="#D0D7DE"/>
+    <text class="mono" x="60" y="178" font-size="16" letter-spacing="2" fill="#E00000">01</text>
+    <text class="sans" x="60" y="224" font-size="32" font-weight="700" letter-spacing="-.5" fill="#0A0D0F">Plan</text>
+    <text class="sans" x="60" y="266" font-size="19" fill="#57606A">Ideas become</text>
+    <text class="sans" x="60" y="294" font-size="19" fill="#57606A">plans &amp; tasks</text>
+  </g>
+  <g>
+    <rect x="286" y="140" width="216" height="184" rx="12" fill="#F6F8FA" stroke="#E00000"/>
+    <text class="mono" x="306" y="178" font-size="16" letter-spacing="2" fill="#E00000">02</text>
+    <text class="sans" x="306" y="224" font-size="32" font-weight="700" letter-spacing="-.5" fill="#0A0D0F">Run</text>
+    <text class="sans" x="306" y="266" font-size="19" fill="#57606A">Any agent CLI,</text>
+    <text class="sans" x="306" y="294" font-size="19" fill="#57606A">task by task</text>
+  </g>
+  <g>
+    <rect x="532" y="140" width="216" height="184" rx="12" fill="#F6F8FA" stroke="#D0D7DE"/>
+    <text class="mono" x="552" y="178" font-size="16" letter-spacing="2" fill="#E00000">03</text>
+    <text class="sans" x="552" y="224" font-size="32" font-weight="700" letter-spacing="-.5" fill="#0A0D0F">Validate</text>
+    <text class="sans" x="552" y="266" font-size="19" fill="#57606A">Gates, CI and</text>
+    <text class="sans" x="552" y="294" font-size="19" fill="#57606A">evals every task</text>
+  </g>
+  <g>
+    <rect x="778" y="140" width="216" height="184" rx="12" fill="#F6F8FA" stroke="#D0D7DE"/>
+    <text class="mono" x="798" y="178" font-size="16" letter-spacing="2" fill="#E00000">04</text>
+    <text class="sans" x="798" y="224" font-size="32" font-weight="700" letter-spacing="-.5" fill="#0A0D0F">Ship</text>
+    <text class="sans" x="798" y="266" font-size="19" fill="#57606A">Traceable commits</text>
+    <text class="sans" x="798" y="294" font-size="19" fill="#57606A">and merged PRs</text>
+  </g>
+  <g>
+    <rect x="1024" y="140" width="216" height="184" rx="12" fill="#F6F8FA" stroke="#D0D7DE"/>
+    <text class="mono" x="1044" y="178" font-size="16" letter-spacing="2" fill="#E00000">05</text>
+    <text class="sans" x="1044" y="224" font-size="32" font-weight="700" letter-spacing="-.5" fill="#0A0D0F">Remember</text>
+    <text class="sans" x="1044" y="266" font-size="19" fill="#57606A">Merges feed</text>
+    <text class="sans" x="1044" y="294" font-size="19" fill="#57606A">semantic search</text>
+  </g>
+  <path class="flow" d="M261 232H277" stroke="#E00000" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M275 226L282 232L275 238" stroke="#E00000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="flow" d="M507 232H523" stroke="#E00000" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M521 226L528 232L521 238" stroke="#E00000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="flow" d="M753 232H769" stroke="#E00000" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M767 226L774 232L767 238" stroke="#E00000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="flow" d="M999 232H1015" stroke="#E00000" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M1013 226L1020 232L1013 238" stroke="#E00000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <path class="flow" d="M1132 332V394Q1132 410 1116 410H164Q148 410 148 394V340" stroke="#E00000" stroke-width="2" stroke-dasharray="6 8" stroke-linecap="round"/>
+  <path d="M142 344L148 336L154 344" stroke="#E00000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="402.5" y="391" width="475" height="38" rx="19" fill="#FFFFFF" stroke="#D0D7DE"/>
+  <text class="mono" x="640" y="416" font-size="18" text-anchor="middle" fill="#0A0D0F">every merge makes the next plan smarter</text>
+</g>
+<rect x="0.5" y="0.5" width="1279" height="469" rx="15.5" stroke="#D0D7DE"/>
+</svg>
