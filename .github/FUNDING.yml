@@ -1,0 +1,13 @@
+# Org-wide default GitHub Sponsors button.
+# Docs: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository
+#
+# GitHub uses this file for every OpenThrottle repository that has no FUNDING.yml of its own.
+# It exists mainly for the public mirror OpenThrottle/OpenThrottle, a filtered export of the
+# monorepo that carries no .github/ directory. OpenThrottle/monorepo has its own copy; keep
+# the two in step.
+#
+# The sponsee must stay the OpenThrottle ORG. The org has a Sponsors listing and no individual
+# account does; a key pointing at an unenrolled account renders no button and no error.
+
+github: OpenThrottle
+custom: https://github.com/OpenThrottle/monorepo/blob/main/FUNDING.md
