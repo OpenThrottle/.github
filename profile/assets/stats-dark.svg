@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="290" viewBox="0 0 1280 290" fill="none" role="img">
+<style>
+  .sans { font-family: Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
+  .mono { font-family: 'JetBrains Mono', SFMono-Regular, Menlo, Consolas, monospace; }
+  
+</style>
+<defs>
+  <clipPath id="round"><rect width="1280" height="290" rx="16"/></clipPath>
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+    <path d="M32 0H0V32" stroke="#161B20" stroke-width="1"/>
+  </pattern>
+</defs>
+<g clip-path="url(#round)">
+  <rect width="1280" height="290" fill="#0A0D0F"/>
+  
+  <line x1="40" y1="186" x2="1240" y2="186" stroke="#20262D"/>
+  <rect x="40" y="40" width="28" height="4" rx="2" fill="#FF0000"/>
+  <text class="sans" x="40" y="116" font-size="68" font-weight="800" letter-spacing="-1.5" fill="#F7F9FA">689+</text>
+  <text class="sans" x="40" y="152" font-size="24" fill="#7C8892">PRs merged</text>
+  <rect x="340" y="40" width="28" height="4" rx="2" fill="#FF0000"/>
+  <text class="sans" x="340" y="116" font-size="68" font-weight="800" letter-spacing="-1.5" fill="#F7F9FA">74</text>
+  <text class="sans" x="340" y="152" font-size="24" fill="#7C8892">packages</text>
+  <rect x="640" y="40" width="28" height="4" rx="2" fill="#FF0000"/>
+  <text class="sans" x="640" y="116" font-size="68" font-weight="800" letter-spacing="-1.5" fill="#F7F9FA">8</text>
+  <text class="sans" x="640" y="152" font-size="24" fill="#7C8892">applications</text>
+  <rect x="940" y="40" width="28" height="4" rx="2" fill="#FF0000"/>
+  <text class="sans" x="940" y="116" font-size="68" font-weight="800" letter-spacing="-1.5" fill="#F7F9FA">6</text>
+  <text class="sans" x="940" y="152" font-size="24" fill="#7C8892">agent CLIs</text>
+  <text class="mono" x="40" y="239" font-size="16" letter-spacing="2.5" fill="#7C8892">BRING YOUR OWN AGENT</text>
+  <rect x="306" y="210" width="176" height="46" rx="23" fill="#13171B" stroke="#20262D"/>
+  <circle cx="326" cy="233" r="4.5" fill="#FF0000"/>
+  <text class="sans" x="339" y="240" font-size="20" font-weight="600" fill="#F7F9FA">Claude Code</text>
+  <rect x="492" y="210" width="104" height="46" rx="23" fill="#13171B" stroke="#20262D"/>
+  <circle cx="512" cy="233" r="4.5" fill="#FF0000"/>
+  <text class="sans" x="525" y="240" font-size="20" font-weight="600" fill="#F7F9FA">Codex</text>
+  <rect x="606" y="210" width="116" height="46" rx="23" fill="#13171B" stroke="#20262D"/>
+  <circle cx="626" cy="233" r="4.5" fill="#FF0000"/>
+  <text class="sans" x="639" y="240" font-size="20" font-weight="600" fill="#F7F9FA">Cursor</text>
+  <rect x="732" y="210" width="92" height="46" rx="23" fill="#13171B" stroke="#20262D"/>
+  <circle cx="752" cy="233" r="4.5" fill="#FF0000"/>
+  <text class="sans" x="765" y="240" font-size="20" font-weight="600" fill="#F7F9FA">Grok</text>
+  <rect x="834" y="210" width="140" height="46" rx="23" fill="#13171B" stroke="#20262D"/>
+  <circle cx="854" cy="233" r="4.5" fill="#FF0000"/>
+  <text class="sans" x="867" y="240" font-size="20" font-weight="600" fill="#F7F9FA">OpenCode</text>
+  <rect x="984" y="210" width="176" height="46" rx="23" fill="#13171B" stroke="#20262D"/>
+  <circle cx="1004" cy="233" r="4.5" fill="#FF0000"/>
+  <text class="sans" x="1017" y="240" font-size="20" font-weight="600" fill="#F7F9FA">Antigravity</text>
+</g>
+<rect x="0.5" y="0.5" width="1279" height="289" rx="15.5" stroke="#20262D"/>
+</svg>
