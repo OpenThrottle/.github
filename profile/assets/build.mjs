@@ -3,6 +3,10 @@
 // Run from the repo root: `node profile/assets/build.mjs`
 // Edit the templates here, never the emitted .svg files.
 //
+// stats-{dark,light}.svg are NOT built here: OpenThrottle/monorepo's
+// `@openthrottle/openthrottle-product:generate-surfaces` draws them from live
+// numbers, alongside profile/README.md.
+//
 // Palette mirrors the app's dark theme (monorepo docs/marketing/format.json → brand).
 
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -200,49 +204,7 @@ const loop = (p) => {
   return frame(w, h, p, body, style);
 };
 
-const STATS = [
-  ['689+', 'PRs merged'],
-  ['74', 'packages'],
-  ['8', 'applications'],
-  ['6', 'agent CLIs'],
-];
-
-const AGENTS = ['Claude Code', 'Codex', 'Cursor', 'Grok', 'OpenCode', 'Antigravity'];
-
-const stats = (p) => {
-  const w = 1280;
-  const h = 290;
-  const colW = (w - 80) / STATS.length;
-
-  const blocks = STATS.map(([n, label], i) => {
-    const x = 40 + i * colW;
-    return `<rect x="${x}" y="40" width="28" height="4" rx="2" fill="${p.red}"/>
-  <text class="sans" x="${x}" y="116" font-size="68" font-weight="800" letter-spacing="-1.5" fill="${p.fg}">${n}</text>
-  <text class="sans" x="${x}" y="152" font-size="24" fill="${p.muted}">${label}</text>`;
-  }).join('\n  ');
-
-  const label = 'BRING YOUR OWN AGENT';
-  // Monospace label: 0.6em advance plus the 2.5px letter-spacing.
-  let x = 40 + Math.round(label.length * (16 * 0.6 + 2.5)) + 24;
-  const chips = AGENTS.map((a) => {
-    const cw = textWidth(a, 20, 0.6) + 44;
-    const chip = `<rect x="${x}" y="210" width="${cw}" height="46" rx="23" fill="${p.card}" stroke="${p.border}"/>
-  <circle cx="${x + 20}" cy="233" r="4.5" fill="${p.red}"/>
-  <text class="sans" x="${x + 33}" y="240" font-size="20" font-weight="600" fill="${p.fg}">${a}</text>`;
-    x += cw + 10;
-    return chip;
-  }).join('\n  ');
-
-  const body = `
-  <line x1="40" y1="186" x2="${w - 40}" y2="186" stroke="${p.border}"/>
-  ${blocks}
-  <text class="mono" x="40" y="239" font-size="16" letter-spacing="2.5" fill="${p.muted}">${label}</text>
-  ${chips}`;
-
-  return frame(w, h, p, body);
-};
-
-const ASSETS = { hero, loop, stats };
+const ASSETS = { hero, loop };
 
 for (const [name, render] of Object.entries(ASSETS)) {
   for (const [scheme, palette] of Object.entries(PALETTES)) {
