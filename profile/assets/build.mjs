@@ -3,13 +3,14 @@
 // Run from the repo root: `node profile/assets/build.mjs`
 // Edit the templates here, never the emitted .svg files.
 //
-// stats-{dark,light}.svg are NOT built here: OpenThrottle/monorepo's
-// `@openthrottle/openthrottle-product:generate-surfaces` draws them from live
-// numbers, alongside profile/README.md.
+// hero-{dark,light}.svg and stats-{dark,light}.svg are NOT built here:
+// OpenThrottle/monorepo's `@openthrottle/openthrottle-product:generate-surfaces`
+// draws them (the hero from `renderHeroSvg`, the stats card from live numbers),
+// alongside profile/README.md. Copy them from its out/org-profile/assets/.
 //
 // Palette mirrors the app's dark theme (monorepo docs/marketing/format.json → brand).
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -41,11 +42,6 @@ const PALETTES = {
 const SANS = `Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif`;
 const MONO = `'JetBrains Mono', SFMono-Regular, Menlo, Consolas, monospace`;
 
-// The brand icon, embedded as a data URI: GitHub renders README SVGs as <img>,
-// which blocks external fetches, so the image has to travel inside the SVG.
-// Source: storage.googleapis.com/monorepo-production-assets/OpenThrottle/branding/icons/red/icon-256.png
-const LOGO = `data:image/png;base64,${readFileSync(join(OUT, 'logo-256.png')).toString('base64')}`;
-
 const esc = (s) => {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 };
@@ -75,63 +71,6 @@ const frame = (w, h, p, body, extraStyle = '') => {
 <rect x="0.5" y="0.5" width="${w - 1}" height="${h - 1}" rx="15.5" stroke="${p.border}"/>
 </svg>
 `;
-};
-
-const hero = (p) => {
-  const w = 1280;
-  const h = 360;
-  const speedLines = [
-    [44, 300, 0.9],
-    [62, 210, 0.5],
-    [80, 260, 0.75],
-    [98, 170, 0.4],
-  ]
-    .map(([y, len, o], i) => {
-      return `<rect class="streak s${i}" x="${w - 60 - len}" y="${y}" width="${len}" height="3" rx="1.5" fill="url(#streak)" opacity="${o}"/>`;
-    })
-    .join('\n  ');
-
-  const style = `
-  @media (prefers-reduced-motion: no-preference) {
-    .streak { animation: zip 2.2s cubic-bezier(.22,1,.36,1) both; }
-    .s1 { animation-delay: .15s; } .s2 { animation-delay: .3s; }
-    .s3 { animation-delay: .45s; } .s4 { animation-delay: .6s; }
-  }
-  @keyframes zip {
-    0% { transform: translateX(-140px); opacity: 0; }
-    100% { transform: translateX(0); }
-  }`;
-
-  const body = `
-  <defs>
-    <radialGradient id="glow" cx="220" cy="180" r="260" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="${p.red}" stop-opacity="${p.glow}"/>
-      <stop offset="1" stop-color="${p.red}" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="streak" x1="0" x2="1">
-      <stop offset="0" stop-color="${p.red}" stop-opacity="0"/>
-      <stop offset="1" stop-color="${p.red}"/>
-    </linearGradient>
-    <linearGradient id="fade" x1="0" x2="1">
-      <stop offset="0" stop-color="#fff" stop-opacity="1"/>
-      <stop offset=".75" stop-color="#fff" stop-opacity="0"/>
-    </linearGradient>
-    <mask id="gridmask"><rect width="${w}" height="${h}" fill="url(#fade)"/></mask>
-  </defs>
-  <rect width="${w}" height="${h}" fill="url(#grid)" mask="url(#gridmask)"/>
-  <rect width="${w}" height="${h}" fill="url(#glow)"/>
-  ${speedLines}
-
-  <image href="${LOGO}" x="92" y="52" width="256" height="256"/>
-
-  <text class="mono" x="380" y="112" font-size="17" letter-spacing="3" fill="${p.red}">OPEN CORE · MCP-NATIVE · LOCAL-FIRST</text>
-  <text class="sans" x="376" y="186" font-size="78" font-weight="800" letter-spacing="-2.5" fill="${p.fg}">OpenThrottle<tspan fill="${p.red}"> AI</tspan></text>
-  <text class="sans" x="380" y="236" font-size="25" fill="${p.muted}">AI-powered feedback loops that move you 10× to 100× faster,</text>
-  <text class="sans" x="380" y="270" font-size="25" fill="${p.muted}">without giving up control.</text>
-  <text class="mono" x="380" y="320" font-size="19" fill="${p.fg}">plan <tspan fill="${p.red}">→</tspan> run <tspan fill="${p.red}">→</tspan> validate <tspan fill="${p.red}">→</tspan> ship <tspan fill="${p.red}">→</tspan> remember <tspan fill="${p.red}">↺</tspan></text>
-  <rect x="0" y="${h - 4}" width="${w}" height="4" fill="${p.red}" opacity=".9"/>`;
-
-  return frame(w, h, p, body, style);
 };
 
 const STAGES = [
@@ -204,7 +143,7 @@ const loop = (p) => {
   return frame(w, h, p, body, style);
 };
 
-const ASSETS = { hero, loop };
+const ASSETS = { loop };
 
 for (const [name, render] of Object.entries(ASSETS)) {
   for (const [scheme, palette] of Object.entries(PALETTES)) {
